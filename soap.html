@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Acupuncture SOAP Note</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; }
+    h2 { border-bottom: 1px solid #000; padding-bottom: 4px; }
+    label { display: block; margin: 6px 0; }
+    textarea, input[type=text] { width: 100%; }
+    .checkboxes { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .section { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Acupuncture SOAP Note</h1>
+  
+  <div class="section">
+    <label>Patient Name: <input type="text"></label>
+    <label>Date: <input type="text"></label>
+    <label>Diagnosis: <input type="text"></label>
+  </div>
+  
+  <div class="section">
+    <h2>S – Subjective</h2>
+    <label>Chief Complaints:</label>
+    <textarea rows="4"></textarea>
+    
+    <label>Sleep Concerns:</label>
+    <div class="checkboxes">
+      <label><input type="checkbox"> Difficulty falling asleep</label>
+      <label><input type="checkbox"> Waking during night</label>
+      <label><input type="checkbox"> Wakes with pain</label>
+      <label><input type="checkbox"> Fatigue</label>
+      <label><input type="checkbox"> Reduced alertness</label>
+    </div>
+    
+    <label>ADL Concerns:</label>
+    <div class="checkboxes">
+      <label><input type="checkbox"> Getting out of bed</label>
+      <label><input type="checkbox"> Household chores</label>
+      <label><input type="checkbox"> Bathing/showering</label>
+      <label><input type="checkbox"> Dressing</label>
+      <label><input type="checkbox"> Laundry</label>
+      <label><input type="checkbox"> Grocery shopping</label>
+    </div>
+    
+    <label>Medications: <input type="text"></label>
+  </div>
+  
+  <div class="section">
+    <h2>O – Objective</h2>
+    <label>Pain Location/Scale: <input type="text"></label>
+    <label>Description:</label>
+    <div class="checkboxes">
+      <label><input type="checkbox"> Aching</label>
+      <label><input type="checkbox"> Sharp</label>
+      <label><input type="checkbox"> Throbbing</label>
+      <label><input type="checkbox"> Burning</label>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>A – Assessment</h2>
+    <textarea rows="3"></textarea>
+  </div>
+  
+  <div class="section">
+    <h2>P – Plan</h2>
+    <textarea rows="3"></textarea>
+  </div>
+  
+  <button onclick="window.print()">Print / Save as PDF</button>
+</body>
+</html>
