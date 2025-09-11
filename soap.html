@@ -4,27 +4,32 @@
   <meta charset="UTF-8">
   <title>Acupuncture SOAP Note</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; }
-    h2 { border-bottom: 1px solid #000; padding-bottom: 4px; }
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; }
+    h1, h2 { border-bottom: 1px solid #000; padding-bottom: 4px; }
     label { display: block; margin: 6px 0; }
     textarea, input[type=text] { width: 100%; }
-    .checkboxes { display: grid; grid-template-columns: repeat(3, 1fr); }
-    .section { margin-top: 20px; }
+    .checkboxes, .radios { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 6px; }
+    .section { margin-top: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+    .pain-scale { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pain-scale label { display: inline-block; }
+    button { margin-top: 20px; padding: 10px 15px; font-size: 16px; }
   </style>
 </head>
 <body>
   <h1>Acupuncture SOAP Note</h1>
   
+  <!-- Patient Info -->
   <div class="section">
     <label>Patient Name: <input type="text"></label>
     <label>Date: <input type="text"></label>
     <label>Diagnosis: <input type="text"></label>
   </div>
   
+  <!-- Subjective -->
   <div class="section">
     <h2>S – Subjective</h2>
     <label>Chief Complaints:</label>
-    <textarea rows="4"></textarea>
+    <textarea rows="3"></textarea>
     
     <label>Sleep Concerns:</label>
     <div class="checkboxes">
@@ -41,6 +46,9 @@
       <label><input type="checkbox"> Household chores</label>
       <label><input type="checkbox"> Bathing/showering</label>
       <label><input type="checkbox"> Dressing</label>
+      <label><input type="checkbox"> Putting on socks/shoes</label>
+      <label><input type="checkbox"> Sweeping/cleaning</label>
+      <label><input type="checkbox"> Taking out trash</label>
       <label><input type="checkbox"> Laundry</label>
       <label><input type="checkbox"> Grocery shopping</label>
     </div>
@@ -48,26 +56,70 @@
     <label>Medications: <input type="text"></label>
   </div>
   
+  <!-- Objective -->
   <div class="section">
     <h2>O – Objective</h2>
-    <label>Pain Location/Scale: <input type="text"></label>
-    <label>Description:</label>
+    <label>Pain Location: <input type="text"></label>
+    
+    <label>Pain Scale (0–10):</label>
+    <div class="pain-scale">
+      <label><input type="radio" name="pain" value="0"> 0</label>
+      <label><input type="radio" name="pain" value="1"> 1</label>
+      <label><input type="radio" name="pain" value="2"> 2</label>
+      <label><input type="radio" name="pain" value="3"> 3</label>
+      <label><input type="radio" name="pain" value="4"> 4</label>
+      <label><input type="radio" name="pain" value="5"> 5</label>
+      <label><input type="radio" name="pain" value="6"> 6</label>
+      <label><input type="radio" name="pain" value="7"> 7</label>
+      <label><input type="radio" name="pain" value="8"> 8</label>
+      <label><input type="radio" name="pain" value="9"> 9</label>
+      <label><input type="radio" name="pain" value="10"> 10</label>
+    </div>
+    
+    <label>Pain Description:</label>
     <div class="checkboxes">
       <label><input type="checkbox"> Aching</label>
       <label><input type="checkbox"> Sharp</label>
       <label><input type="checkbox"> Throbbing</label>
       <label><input type="checkbox"> Burning</label>
+      <label><input type="checkbox"> Stabbing</label>
+      <label><input type="checkbox"> Dull</label>
+      <label><input type="checkbox"> Shooting</label>
+      <label><input type="checkbox"> Stinging</label>
+      <label><input type="checkbox"> Cutting</label>
     </div>
   </div>
   
+  <!-- Assessment -->
   <div class="section">
     <h2>A – Assessment</h2>
     <textarea rows="3"></textarea>
   </div>
   
+  <!-- Plan -->
   <div class="section">
     <h2>P – Plan</h2>
+    <label>Treatment Plan (check all that apply):</label>
+    <div class="checkboxes">
+      <label><input type="checkbox"> Acupuncture w/ stimulation, initial 15 mins (97813)</label>
+      <label><input type="checkbox"> Acupuncture w/ stimulation, additional 15 mins (97814)</label>
+      <label><input type="checkbox"> Acupuncture w/o stimulation, initial 15 mins (97810)</label>
+      <label><input type="checkbox"> Acupuncture w/o stimulation, additional 15 mins (97811)</label>
+    </div>
+    
+    <label>Other modalities:</label>
+    <div class="checkboxes">
+      <label><input type="checkbox"> Electrical stimulation</label>
+      <label><input type="checkbox"> Soft tissue mobilization</label>
+      <label><input type="checkbox"> Myofascial release</label>
+      <label><input type="checkbox"> Herbal medicine</label>
+      <label><input type="checkbox"> Infrared heat (97026)</label>
+    </div>
+    
+    <label>Total Time Spent: <input type="text"></label>
+    <label>Goals for Treatment:</label>
     <textarea rows="3"></textarea>
+    <label>Provider Signature: <input type="text"></label>
   </div>
   
   <button onclick="window.print()">Print / Save as PDF</button>
