@@ -21,7 +21,7 @@
   <!-- Patient Info -->
   <div class="section">
     <label>Patient Name: <input type="text"></label>
-    <label>Date: <input type="text"></label>
+    <<input type="Date" id="date" name="date">
     <label>Diagnosis: <input type="text"></label>
   </div>
   
@@ -51,7 +51,13 @@
       <label><input type="checkbox"> Taking out trash</label>
       <label><input type="checkbox"> Laundry</label>
       <label><input type="checkbox"> Grocery shopping</label>
-    </div>
+
+    <!-- NEW: checkbox with free-text field -->
+    <label>
+      <input type="checkbox"> Other:
+      <input type="text" placeholder="Type ADL concern here">
+     </label>
+  </div>
     
     <label>Medications: <input type="text"></label>
   </div>
@@ -59,7 +65,31 @@
   <!-- Objective -->
   <div class="section">
     <h2>O – Objective</h2>
-    <label>Pain Location: <input type="text"></label>
+     <label>Pain Location:</label>
+    <div class="checkboxes">
+      <label><input type="checkbox"> Head</label>
+      <label><input type="checkbox"> Cervical Spine</label>
+      <label><input type="checkbox"> Thoracic Spine</label>   
+      <label><input type="checkbox"> Lumbar Spine</label>
+      <label><input type="checkbox"> Right Shoulder</label>
+      <label><input type="checkbox"> Left Shoulder</label>
+      <label><input type="checkbox"> Right Elbow</label>
+      <label><input type="checkbox"> Left Elbow</label>
+      <label><input type="checkbox"> Right Wrist/Hand</label>
+      <label><input type="checkbox"> Left Wrist/Hand</label>
+      <label><input type="checkbox"> Right Hip</label>
+      <label><input type="checkbox"> Left Hip</label>
+      <label><input type="checkbox"> Right Knee</label>
+      <label><input type="checkbox"> Left Knee</label>
+      <label><input type="checkbox"> Right Ankle/Foot</label>
+      <label><input type="checkbox"> Left Ankle/Foot</label>
+   
+    <!-- NEW: checkbox with free-text field -->
+    <label>
+      <input type="checkbox"> Other:
+      <input type="text" placeholder="Specific Body Part/Area">
+     </label>
+  </div>
     
     <label>Pain Scale (0–10):</label>
     <div class="pain-scale">
@@ -101,26 +131,70 @@
     <h2>P – Plan</h2>
     <label>Treatment Plan (check all that apply):</label>
     <div class="checkboxes">
-      <label><input type="checkbox"> Acupuncture w/ stimulation, initial 15 mins (97813)</label>
-      <label><input type="checkbox"> Acupuncture w/ stimulation, additional 15 mins (97814)</label>
+      <label><input type="checkbox"> Acupuncture w/ e-stimulation, initial 15 mins (97813)</label>
+      <label><input type="checkbox"> Acupuncture w/ e-stimulation, additional 15 mins (97814)</label>
       <label><input type="checkbox"> Acupuncture w/o stimulation, initial 15 mins (97810)</label>
       <label><input type="checkbox"> Acupuncture w/o stimulation, additional 15 mins (97811)</label>
     </div>
     
     <label>Other modalities:</label>
     <div class="checkboxes">
-      <label><input type="checkbox"> Electrical stimulation</label>
-      <label><input type="checkbox"> Soft tissue mobilization</label>
-      <label><input type="checkbox"> Myofascial release</label>
-      <label><input type="checkbox"> Herbal medicine</label>
+      <label><input type="checkbox"> Soft tissue mobilization (97140) </label>
+      <label><input type="checkbox"> Myofascial release (97140)</label>
       <label><input type="checkbox"> Infrared heat (97026)</label>
+      <label><input type="checkbox"> Cupping Therapy (97039)</label>
     </div>
     
     <label>Total Time Spent: <input type="text"></label>
+   
     <label>Goals for Treatment:</label>
-    <textarea rows="3"></textarea>
-    <label>Provider Signature: <input type="text"></label>
+    <div class="checkboxes">
+      <label><input type="checkbox"> Reduce pain intensity</label>
+      <label><input type="checkbox"> Improve sleep quality</label>
+      <label><input type="checkbox"> Increase range of motion</label>
+      <label><input type="checkbox"> Improve daily activity tolerance</label>
+      <label><input type="checkbox"> Reduce headaches/migraines</label>
+      <label><input type="checkbox"> Enhance energy levels</label>
+      <label><input type="checkbox"> Reduce stress or anxiety</label>
+      <label><input type="checkbox"> Support immune function</label>
+      <label><input type="checkbox"> Reduce reliance on medications</label>
+      <label><input type="checkbox"> Enhance overall quality of life</label>
+  <!-- Free-text option -->
+    <label>
+      <input type="checkbox"> Other:
+      <input type="text" placeholder="Type goal here">
+    </label>
   </div>
+
+  <label>Provider Signature:</label>
+    <canvas id="signature-pad" width=400 height=150 style="border:1px solid #000; border-radius:6px;"></canvas>
+    <br>
+    <button type="button" onclick="clearSignature()">Clear</button>
+<!-- Load Signature Pad library -->
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+<script>
+  // Initialize signature pad
+  const canvas = document.getElementById("signature-pad");
+  const signaturePad = new SignaturePad(canvas);
+
+  // Clear button function
+  function clearSignature() {
+    signaturePad.clear();
+  }
+
+  // Optional: when printing, render the signature as an image
+  window.onbeforeprint = function () {
+    if (!signaturePad.isEmpty()) {
+      const img = document.createElement("img");
+      img.src = signaturePad.toDataURL();
+      img.style.border = "1px solid #000";
+      img.style.borderRadius = "6px";
+      img.style.width = "400px";
+      img.style.height = "150px";
+      canvas.replaceWith(img);
+    }
+  };
+</script>
   
   <button onclick="window.print()">Print / Save as PDF</button>
 </body>
