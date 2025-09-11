@@ -8,36 +8,24 @@ body {
   font-family: "Times New Roman", Times, serif;
   max-width: 900px;
   margin: auto;
-  font-size: 10pt;   /* changed from 12pt */
+  font-size: 10pt;
 }
-
-h1 {
-  font-size: 16pt;   /* slightly larger for the title */
-}
-
-h2 {
-  font-size: 14pt;   /* section headers */
-}
-    label { display: block; margin: 6px 0; }
-    textarea, input[type=text] { width: 100%; }
-    .checkboxes, .radios { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 6px; }
-    .section { 
-  margin-top: 20px; 
-  padding: 10px; 
-  /* border: 1px solid #ddd; */  /* Remove or comment this line */
-  border-radius: 6px;
-}    .pain-scale { display: flex; gap: 10px; flex-wrap: wrap; }
-    .pain-scale label { display: inline-block; }
-    button { margin-top: 20px; padding: 10px 15px; font-size: 12px; }
-    @media print {
-  body {
-    font-size: 10pt !important;
-  }
-  h1 { font-size: 12pt !important; }
-  h2 { font-size: 11pt !important; }
-  label, input, textarea, .checkboxes, .radios {
-    font-size: 10pt !important;
-  }
+h1 { font-size: 14pt; }
+h2 { font-size: 13pt; }
+h3 { font-size: 12pt; }
+label { display: block; margin: 6px 0; }
+textarea, input[type=text] { width: 100%; }
+.checkboxes, .radios { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 6px; }
+.section { margin-top: 20px; padding: 10px; }
+.pain-scale { display: flex; gap: 10px; flex-wrap: wrap; }
+.pain-scale label { display: inline-block; }
+button { margin-top: 20px; padding: 10px 15px; font-size: 12px; }
+@media print {
+  body { font-family: "Times New Roman", Times, serif !important; font-size: 10pt !important; }
+  h1 { font-size: 14pt !important; }
+  h2 { font-size: 13pt !important; }
+  h3 { font-size: 12pt !important; }
+  label, input, textarea, .checkboxes, .radios { font-size: 10pt !important; font-family: "Times New Roman", Times, serif !important; }
 }
   </style>
 </head>
