@@ -12,7 +12,7 @@
     .section { margin-top: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
     .pain-scale { display: flex; gap: 10px; flex-wrap: wrap; }
     .pain-scale label { display: inline-block; }
-    button { margin-top: 20px; padding: 10px 15px; font-size: 16px; }
+    button { margin-top: 20px; padding: 10px 15px; font-size: 12px; }
   </style>
 </head>
 <body>
@@ -21,51 +21,14 @@
   <!-- Patient Info -->
   <div class="section">
     <label>Patient Name: <input type="text"></label>
-    <<input type="Date" id="date" name="date">
+    <input type="Date" id="date" name="date">
     <label>Diagnosis: <input type="text"></label>
   </div>
   
   <!-- Subjective -->
   <div class="section">
     <h2>S – Subjective</h2>
-    <label>Chief Complaints:</label>
-    <textarea rows="3"></textarea>
-    
-    <label>Sleep Concerns:</label>
-    <div class="checkboxes">
-      <label><input type="checkbox"> Difficulty falling asleep</label>
-      <label><input type="checkbox"> Waking during night</label>
-      <label><input type="checkbox"> Wakes with pain</label>
-      <label><input type="checkbox"> Fatigue</label>
-      <label><input type="checkbox"> Reduced alertness</label>
-    </div>
-    
-    <label>ADL Concerns:</label>
-    <div class="checkboxes">
-      <label><input type="checkbox"> Getting out of bed</label>
-      <label><input type="checkbox"> Household chores</label>
-      <label><input type="checkbox"> Bathing/showering</label>
-      <label><input type="checkbox"> Dressing</label>
-      <label><input type="checkbox"> Putting on socks/shoes</label>
-      <label><input type="checkbox"> Sweeping/cleaning</label>
-      <label><input type="checkbox"> Taking out trash</label>
-      <label><input type="checkbox"> Laundry</label>
-      <label><input type="checkbox"> Grocery shopping</label>
-
-    <!-- NEW: checkbox with free-text field -->
-    <label>
-      <input type="checkbox"> Other:
-      <input type="text" placeholder="Type ADL concern here">
-     </label>
-  </div>
-    
-    <label>Medications: <input type="text"></label>
-  </div>
-  
-  <!-- Objective -->
-  <div class="section">
-    <h2>O – Objective</h2>
-     <label>Pain Location:</label>
+   <label>Pain Location:</label>
     <div class="checkboxes">
       <label><input type="checkbox"> Head</label>
       <label><input type="checkbox"> Cervical Spine</label>
@@ -119,11 +82,152 @@
       <label><input type="checkbox"> Cutting</label>
     </div>
   </div>
+    
+    <label>ADL Concerns:</label>
+    <div class="checkboxes">
+      <label><input type="checkbox"> Getting out of bed</label>
+      <label><input type="checkbox"> Household chores</label>
+      <label><input type="checkbox"> Bathing/showering</label>
+      <label><input type="checkbox"> Dressing</label>
+      <label><input type="checkbox"> Putting on socks/shoes</label>
+      <label><input type="checkbox"> Sweeping/cleaning</label>
+      <label><input type="checkbox"> Taking out trash</label>
+      <label><input type="checkbox"> Laundry</label>
+      <label><input type="checkbox"> Grocery shopping</label>
+
+    <!-- NEW: checkbox with free-text field -->
+    <label>
+      <input type="checkbox"> Other:
+      <input type="text" placeholder="Type ADL concern here">
+     </label>
+  </div>
+    
+    <label>Medications: <input type="text"></label>
+  </div>
+  
+  <!-- Objective -->
+  <div class="section">
+    <h2>O – Objective</h2>
+  <label>Observation:</label>
+    <div class="checkboxes">
+      <label><input type="checkbox"> Swelling</label>
+      <label><input type="checkbox"> Numbness</label>
+      <label><input type="checkbox"> Tingling</label>   
+      <label><input type="checkbox"> Spams</label>
+  </div>
+    
+<div class="section">
+  <h2>Muscle Tenderness</h2>
+  <p>Check all muscle groups where tenderness is noted:</p>
+  
+  <h3>Neck & Upper Back</h3>
+  <div class="checkboxes">
+    <label><input type="checkbox"> Sternocleidomastoid (SCM)</label>
+    <label><input type="checkbox"> Trapezius (upper/mid/lower)</label>
+    <label><input type="checkbox"> Levator scapulae</label>
+    <label><input type="checkbox"> Scalenes</label>
+    <label><input type="checkbox"> Splenius capitis/cervicis</label>
+    <label><input type="checkbox"> Suboccipitals</label>
+  </div>
+  
+  <h3>Shoulder & Chest</h3>
+  <div class="checkboxes">
+    <label><input type="checkbox"> Deltoid (ant/mid/post)</label>
+    <label><input type="checkbox"> Supraspinatus</label>
+    <label><input type="checkbox"> Infraspinatus</label>
+    <label><input type="checkbox"> Teres minor</label>
+    <label><input type="checkbox"> Subscapularis</label>
+    <label><input type="checkbox"> Pectoralis major/minor</label>
+    <label><input type="checkbox"> Rhomboids</label>
+    <label><input type="checkbox"> Serratus anterior</label>
+  </div>
+  
+  <h3>Arm & Elbow</h3>
+  <div class="checkboxes">
+    <label><input type="checkbox"> Biceps brachii</label>
+    <label><input type="checkbox"> Triceps brachii</label>
+    <label><input type="checkbox"> Brachialis</label>
+    <label><input type="checkbox"> Brachioradialis</label>
+    <label><input type="checkbox"> Wrist flexors</label>
+    <label><input type="checkbox"> Wrist extensors</label>
+  </div>
+  
+  <h3>Forearm & Hand</h3>
+  <div class="checkboxes">
+    <label><input type="checkbox"> Pronator teres</label>
+    <label><input type="checkbox"> Supinator</label>
+    <label><input type="checkbox"> Thenar eminence</label>
+    <label><input type="checkbox"> Hypothenar eminence</label>
+    <label><input type="checkbox"> Interossei / lumbricals</label>
+  </div>
+  
+  <h3>Thoracic & Lumbar</h3>
+  <div class="checkboxes">
+    <label><input type="checkbox"> Paraspinals (erector spinae)</label>
+    <label><input type="checkbox"> Quadratus lumborum</label>
+    <label><input type="checkbox"> Latissimus dorsi</label>
+  </div>
+  
+  <h3>Hip & Pelvis</h3>
+  <div class="checkboxes">
+    <label><input type="checkbox"> Gluteus maximus</label>
+    <label><input type="checkbox"> Gluteus medius</label>
+    <label><input type="checkbox"> Gluteus minimus</label>
+    <label><input type="checkbox"> Piriformis</label>
+    <label><input type="checkbox"> Iliopsoas</label>
+    <label><input type="checkbox"> Tensor fasciae latae (TFL)</label>
+    <label><input type="checkbox"> Adductors (longus/brevis/magnus)</label>
+  </div>
+  
+  <h3>Thigh & Knee</h3>
+  <div class="checkboxes">
+    <label><input type="checkbox"> Quadriceps (RF/VM/VL/VI)</label>
+    <label><input type="checkbox"> Hamstrings (BF/ST/SM)</label>
+    <label><input type="checkbox"> Sartorius</label>
+    <label><input type="checkbox"> Iliotibial band (IT band)</label>
+  </div>
+  
+  <h3>Lower Leg</h3>
+  <div class="checkboxes">
+    <label><input type="checkbox"> Gastrocnemius</label>
+    <label><input type="checkbox"> Soleus</label>
+    <label><input type="checkbox"> Tibialis anterior</label>
+    <label><input type="checkbox"> Peroneals (longus/brevis)</label>
+    <label><input type="checkbox"> Posterior tibialis</label>
+    <label><input type="checkbox"> Extensor digitorum longus</label>
+    <label><input type="checkbox"> Flexor digitorum longus</label>
+  </div>
+  
+  <h3>Foot</h3>
+  <div class="checkboxes">
+    <label><input type="checkbox"> Plantar fascia</label>
+    <label><input type="checkbox"> Abductor hallucis</label>
+    <label><input type="checkbox"> Flexor digitorum brevis</label>
+    <label><input type="checkbox"> Interossei</label>
+  </div>
+  
+  <!-- Optional free-text -->
+  <label>
+    <input type="checkbox"> Other:
+    <input type="text" placeholder="Type custom muscle group">
+  </label>
+</div>
   
   <!-- Assessment -->
   <div class="section">
     <h2>A – Assessment</h2>
-    <textarea rows="3"></textarea>
+    <label>Assment:</label>
+    <div class="checkboxes">
+      <label><input type="checkbox"> New evaluation </label>
+      <label><input type="checkbox"> Follow-up evaluation</label>
+      <label><input type="checkbox"> Pain decreased after treatment</label>
+      <label><input type="checkbox"> Pain increased after treatment</label>
+      <label><input type="checkbox"> Increase relaxation</label>
+      <label><input type="checkbox"> Improved mobility</label>
+      <label><input type="checkbox"> Improved energy</label>
+      <label><input type="checkbox"> Fatigue/low energy</label>
+      <label><input type="checkbox"> Reduced stress/anxiety</label>
+    </div>
   </div>
   
   <!-- Plan -->
@@ -144,8 +248,6 @@
       <label><input type="checkbox"> Infrared heat (97026)</label>
       <label><input type="checkbox"> Cupping Therapy (97039)</label>
     </div>
-    
-    <label>Total Time Spent: <input type="text"></label>
    
     <label>Goals for Treatment:</label>
     <div class="checkboxes">
